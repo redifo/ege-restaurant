@@ -15,6 +15,6 @@ class ReservationAdmin(admin.ModelAdmin):
 
 @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
-    list_display = ['table_number', 'capacity', 'location']
-    list_filter = ['location']
-    search_fields = ['table_number', 'location']
+    list_display = ['table_number', 'capacity', 'table_location']
+    list_filter = ['table_location']
+    search_fields = ['table_number', 'table_location']

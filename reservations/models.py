@@ -2,13 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Table(models.Model):
-    """model for a table in the restaurant"""
+    """
+    model for a table in the restaurant
+    """
+    GARDEN = 'Garden'
+    BAR = 'Bar'
+    LOCATION_CHOICES = [
+        (GARDEN, 'Garden'),
+        (BAR, 'Bar')
+    ]
+
     table_number = models.IntegerField(unique=True)
     capacity = models.IntegerField()
-    location = models.CharField(max_length=100)
+    table_location = models.CharField(max_length=50, choices=LOCATION_CHOICES)
 
     def __str__(self):
-        return f"Table {self.table_number} at {self.location}"
+        return f"Table {self.table_number} at {self.table_location}"
 
 class Reservation(models.Model):
     """
