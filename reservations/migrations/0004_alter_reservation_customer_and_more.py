@@ -7,16 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        
         ('reservations', '0003_alter_reservation_customer_alter_reservation_table_and_more'),
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='reservation',
-            name='customer',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reservation_customer', to='accounts.customer'),
-        ),
+       
+        
         migrations.AlterField(
             model_name='specialrequest',
             name='reservation',

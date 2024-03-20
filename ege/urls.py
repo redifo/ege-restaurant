@@ -16,14 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from accounts.views import my_accounts
 from menu.views import my_menu
 from reservations.views import my_reservations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", my_accounts, name='accounts'), #  Default view when accessing root of site CHANGEEEEEE LATERRR
-    path('accounts/', my_accounts, name='accounts'),  # Add accounts URLs
+    path("", my_menu, name='menu'), #  Default view when accessing root of site CHANGEEEEEE LATERRR
     path('menu/', my_menu, name='menu'),              # Add menu URLs
     path('reservations/', my_reservations, name='reservations'),  # Add reservations URLs
 ]

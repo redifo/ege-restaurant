@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import Customer
+from django.contrib.auth.models import User
 
 class Table(models.Model):
     """model for a table in the restaurant"""
@@ -14,7 +14,7 @@ class Reservation(models.Model):
     """
     model for each reservation
     """
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='reservation_customer')
+    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reserved_customer', null=True, default=None)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='reserved_tables')
     date = models.DateField()
     time = models.TimeField()

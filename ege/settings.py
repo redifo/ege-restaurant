@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'menu',
-    'accounts',
     'reservations',
     'django_rename_app',
     'cloudinary_storage',

@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        
     ]
 
     operations = [
@@ -38,7 +38,6 @@ class Migration(migrations.Migration):
                 ('time', models.TimeField()),
                 ('number_of_guests', models.IntegerField()),
                 ('special_request', models.TextField(blank=True)),
-                ('customer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.customer')),
                 ('table', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='reservations.table')),
             ],
         ),
