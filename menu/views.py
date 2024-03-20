@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
+from django.views.generic import ListView
+from .models import MenuItem
 
-def my_menu(request):
-    return HttpResponse("This is the menu page.")
+class MenuListView(ListView):
+    model = MenuItem
+    queryset = MenuItem.objects.filter(is_available=True) 
+    template_name = "menu.html"  

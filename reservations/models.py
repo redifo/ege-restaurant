@@ -8,7 +8,7 @@ class Table(models.Model):
     location = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"Table {self.table_number}"
+        return f"Table {self.table_number} at {self.location}"
 
 class Reservation(models.Model):
     """
@@ -19,7 +19,7 @@ class Reservation(models.Model):
     date = models.DateField()
     time = models.TimeField()
     number_of_guests = models.IntegerField()
-
+    
     def __str__(self):
         return f"Reservation for {self.customer} at {self.date} {self.time}"
 
@@ -32,4 +32,4 @@ class SpecialRequest(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name='reservation_special_requests')
 
     def __str__(self):
-        return self.request_text
+        return f"{self.request_text} for ({self.reservation}) (Approved: {self.is_approved})"
