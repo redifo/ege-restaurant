@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 class MenuItem(models.Model):
     """model for a menu item"""
+    
+    #The choices list format learned from
+    #https://docs.djangoproject.com/en/5.0/ref/models/fields/
 
     STARTER = 'Starter'
     MEZE = 'Meze'

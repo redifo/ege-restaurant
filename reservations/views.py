@@ -5,4 +5,4 @@ from .models import Reservation
 class ReservedTable(ListView):
     
     queryset = Reservation.objects.filter(name="kaan") 
-    template_name = "menu.html"  
+    template_name = "reservations.html"  
