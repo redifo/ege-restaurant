@@ -3,9 +3,9 @@ from .models import SpecialRequest, Reservation, Table
 
 @admin.register(SpecialRequest)
 class SpecialRequestAdmin(admin.ModelAdmin):
-    list_display = ['request_text', 'is_approved']
+    list_display = ['content', 'is_approved']
     list_filter = ['is_approved']
-    search_fields = ['request_text']
+    search_fields = ['content']
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):

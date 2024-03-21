@@ -20,6 +20,8 @@ from reservations.views import my_reservations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
+    
     path("", include("home.urls"), name="home-urls"),
     path("menu/", include("menu.urls"), name="menu-urls"),           # Add menu URLs
     path('reservations/', my_reservations, name='reservations'),  # Add reservations URLs
