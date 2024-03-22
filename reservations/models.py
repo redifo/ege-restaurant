@@ -26,10 +26,10 @@ class Reservation(models.Model):
     """
     model for each reservation
     """
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reserved_customer', null=True, default=None)
-    email  = models.EmailField(blank=False)
-    phone =  models.CharField(max_length=15)
-    name  = models.CharField(max_length=50)
+    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reserved_customer', blank=True, null=True)
+    email  = models.EmailField(blank=True, null=True)
+    phone =  models.CharField(max_length=15, blank=True, null=True)
+    name  = models.CharField(max_length=50, blank=True, null=True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='reserved_tables')
     date = models.DateField()
     time = models.TimeField()
@@ -41,7 +41,10 @@ class Reservation(models.Model):
         db_table = 'reservation'
     
     def __str__(self):
-        return f"Reservation for {self.customer} at {self.date} {self.time}"
+        if self.customer:
+            return f"Reservation for {self.customer.username} at {self.date} {self.time}"
+        else:
+            return f"Reservation for {self.name} at {self.date} {self.time}"
 
 class SpecialRequest(models.Model):
     """
