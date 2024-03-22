@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import ReservedTable
+from .views import ReservedListView
 
 urlpatterns = [
-    path('', ReservedTable.as_view(), name="ReservedTable")
+    path('', ReservedListView.as_view(), name="reservations")
     
 ]

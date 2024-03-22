@@ -24,6 +24,6 @@ urlpatterns = [
     
     
     path("menu/", include("menu.urls"), name="menu-urls"),          
-    path('reservations/', include("reservations.urls"), name="reservations"), 
+    path('reservations/', include("reservations.urls"), name="reservations_urls"), 
     path("", include("home.urls"), name="home-urls"),
 ]
