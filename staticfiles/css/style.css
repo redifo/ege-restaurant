@@ -13,6 +13,10 @@ body {
 .contact-info {
     line-height: 0.8; 
 }
+.active {
+    color: #fff; 
+    background-color: #86befa; 
+}
 
 @media (max-width: 768px) {
     .contact-info {
