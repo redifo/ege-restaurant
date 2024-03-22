@@ -28,13 +28,15 @@ class Reservation(models.Model):
     """
     customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reserved_customer', null=True, default=None)
     email  = models.EmailField(blank=False)
-    phone =  models.CharField(max_length=12)
+    phone =  models.CharField(max_length=15)
     name  = models.CharField(max_length=50)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='reserved_tables')
     date = models.DateField()
     time = models.TimeField()
     number_of_guests = models.IntegerField()
-
+    created_at =  models.DateTimeField(auto_now_add=True)
+    updated_at =  models.DateTimeField(auto_now=True)
+    status= models.BooleanField(default=False) # True if confirmed else False
     class Meta:
         db_table = 'reservation'
     
@@ -53,4 +55,4 @@ class SpecialRequest(models.Model):
         db_table = 'special_request'
 
     def __str__(self):
-        return f"{self.request_text} for ({self.reservation}) (Approved: {self.is_approved})"
+        return f"{self.content} for ({self.reservation}) (Approved: {self.is_approved})"

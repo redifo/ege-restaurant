@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div id="form-content">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p class="switch-form">Don't have an account? <a href="#" onclick="switchForm('register')">Register here</a></p>
+            </form>
+        </div>
+        
+        <!-- Registration Form -->
+        <div id="register-form" style="display:none;">
+            <h2>Register</h2>
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="registerEmail">Email address</label>
+                    <input type="email" class="form-control" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerName">Name</label>
+                    <input type="text" class="form-control" id="registerName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Phone (Optional)</label>
+                    <input type="text" class="form-control" id="registerPhone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" class="form-control" id="registerPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <p class="switch-form">Already have an account? <a href="#" onclick="switchForm('login')">Login here</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
