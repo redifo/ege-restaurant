@@ -1,3 +1,5 @@
-from django.db import models
+#from django.contrib.auth.models import AbstractUser
+#from django.db import models
 
-# Create your models here.
+#https://learndjango.com/tutorials/django-custom-user-model
+#https://stackoverflow.com/questions/38996599/django-manage-py-migration-applied-before-its-dependency

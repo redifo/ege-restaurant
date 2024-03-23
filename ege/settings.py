@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'menu',
     'reservations',
+    'home',
     'django_rename_app',
     'cloudinary_storage',
     'cloudinary',
@@ -120,8 +121,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#AUTH_USER_MODEL = 'home.CustomUser'
+
+#https://docs.allauth.org/en/latest/account/advanced.html
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
 
 
 # Internationalization
