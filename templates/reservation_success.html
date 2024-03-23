@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Reservation Successful!</h1>
+    <p>Your reservation for {{ reservation.date }} at {{ reservation.time }} has been confirmed.</p>
+    <p>Details: {{ reservation.number_of_guests }} guests, Location: {{ reservation.table_location }}</p>
+    
+  
+    <a href="{% url 'edit_reservation' reservation.pk %}" class="btn btn-primary">Edit Reservation</a>
+  </div>
+{% endblock %}

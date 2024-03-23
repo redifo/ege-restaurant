@@ -7,9 +7,12 @@ class Table(models.Model):
     """
     GARDEN = 'Garden'
     BAR = 'Bar'
+    DINING_ROOM = 'Dining Room'
+
     LOCATION_CHOICES = [
         (GARDEN, 'Garden'),
-        (BAR, 'Bar')
+        (BAR, 'Bar'),
+        (DINING_ROOM, 'Dining Room')
     ]
 
     table_number = models.IntegerField(unique=True)
@@ -30,13 +33,14 @@ class Reservation(models.Model):
     email  = models.EmailField(blank=True, null=True)
     phone =  models.CharField(max_length=15, blank=True, null=True)
     name  = models.CharField(max_length=50, blank=True, null=True)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='reserved_tables')
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name='reserved_tables', null=True, blank=True)
     date = models.DateField()
     time = models.TimeField()
     number_of_guests = models.IntegerField()
     created_at =  models.DateTimeField(auto_now_add=True)
     updated_at =  models.DateTimeField(auto_now=True)
     status= models.BooleanField(default=False) # True if confirmed else False
+    table_location = models.CharField(max_length=50, choices=Table.LOCATION_CHOICES)
     class Meta:
         db_table = 'reservation'
     

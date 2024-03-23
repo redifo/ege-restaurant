@@ -5,7 +5,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
-
+{% url 'reservation_success' as reservation_success_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,13 +72,24 @@
     <footer class="footer">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5>Contact Us</h5>
                     <p class="contact-info"><i class="fa-solid fa-location-dot"></i> Karpaz yolu 55 Cyprus</p>
                     <p class="contact-info"><i class="fa-regular fa-envelope"></i> info@egerestaurant.com</p>
                     <p class="contact-info"><i class="fa-solid fa-phone"></i> +123 456 7890</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4>
+                      Opening Hours
+                    </h4>
+                    <p>
+                      Everyday
+                    </p>
+                    <p>
+                      10.00 Am -10.00 Pm
+                    </p>
+                  </div>
+                <div class="col-md-4">
                     <h5>Follow Us</h5>
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
