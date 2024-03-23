@@ -1,9 +1,6 @@
-function switchForm(form) {
-    if(form === 'login') {
-        $('#login-form').show();
-        $('#register-form').hide();
-    } else {
-        $('#login-form').hide();
-        $('#register-form').show();
-    }
-}
+
+
+
+function goBack() {
+    window.history.back();
+  }

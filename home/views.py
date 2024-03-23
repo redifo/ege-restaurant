@@ -7,10 +7,3 @@ class Home(TemplateView):
     Show the home page.
     """
     template_name = "home.html"
-
-
-class Login(TemplateView):
-    """
-    Show the login/register page.
-    """
-    template_name = "login.html"
