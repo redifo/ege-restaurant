@@ -2,6 +2,8 @@ from django import forms
 from django.utils import timezone
 from .models import Reservation
 
+#https://docs.djangoproject.com/en/5.0/ref/forms/widgets/
+#https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/#django.forms.ModelForm
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation

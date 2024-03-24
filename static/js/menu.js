@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener('click', () => {
             const filterValue = button.getAttribute('data-filter').substring(1); 
             items.forEach(item => {
-                if (filterValue === '*' || item.classList.contains(filterValue)) {
+                if (filterValue === item.classList.contains(filterValue)) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';

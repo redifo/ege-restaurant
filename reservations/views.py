@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Reservation
 from .forms import ReservationForm
+from django.utils import timezone
 
 def make_reservation(request):
     if request.method == 'POST':
@@ -31,3 +32,12 @@ def edit_reservation(request, pk):
     else:
         form = ReservationForm(instance=reservation)
     return render(request, 'edit_reservation.html', {'form': form, 'reservation': reservation})
+
+def user_reservations(request):
+    if request.user.is_authenticated:
+        # Fetch reservations that are in the future
+        reservations = Reservation.objects.filter(customer=request.user, date__gte=timezone.now()).order_by('date', 'time')
+        return render(request, 'user_reservations.html', {'reservations': reservations})
+    else:
+        # Redirect to login or another appropriate page
+        pass

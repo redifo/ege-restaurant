@@ -73,7 +73,7 @@ p.text-muted { /*copyright text*/
 
 .food-section{
     width: 100%;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
@@ -146,7 +146,19 @@ p.text-muted { /*copyright text*/
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-
+.detail-box{
+    padding: 10px;
+}
+/*reservation page styles */ 
+.reservation-box {
+    margin-top: 75px;
+    margin-left: 20px;
+    margin-bottom: 30 px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fcf6e4e7;
+    border-radius: 10px;
+}
 
 .active { /*active page marker*/
     

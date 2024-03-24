@@ -1,11 +1,51 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-<div class="container">
-    <h2>Make a Reservation</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit Reservation</button>
-    </form>
+<div class="bg-box">
+    <img src="{% static '\img\reservation-bg.webp' %}" alt="hero-background">
+</div>
+<div class="row">
+    <div class="col-md-6 text-center">
+        <div class="reservation-box">
+            <h2>Make a Reservation</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="reservation-box">
+            <h2>Your Reservations</h2>
+            {% for reservation in reservations %}
+            <div class="reservation-entry">
+                <p><strong>Date:</strong> {{ reservation.date }} <strong>Time:</strong> {{ reservation.time }}</p>
+                <p><strong>Guests:</strong> {{ reservation.number_of_guests }} <strong>Location:</strong> {{ reservation.table_location }}</p>
+                <!-- Edit button -->
+                <a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary">Edit</a>
+            </div>
+            {% empty %}
+            <p>You have no upcoming reservations.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="reservation-box ml-0 mr-0">
+        <h2>Your Past Reservations</h2>
+        {% for reservation in reservations %}
+        <div class="reservation-entry">
+            <p><strong>Date:</strong> {{ reservation.date }} <strong>Time:</strong> {{ reservation.time }}</p>
+            <p><strong>Guests:</strong> {{ reservation.number_of_guests }} <strong>Location:</strong> {{ reservation.table_location }}</p>
+            <!-- Edit button -->
+            <a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary">Edit</a>
+        </div>
+        {% empty %}
+        <p>You have no upcoming reservations.</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
