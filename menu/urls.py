@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from django.urls import path
 from .views import MenuListView
 
 urlpatterns = [
-    path('', MenuListView.as_view(), name="menu")
+    path('', MenuListView, name="menu")
     
 ]

@@ -18,12 +18,9 @@ a {
 /* nav bar css*/
 
 .navbar{
-    background-color: #fcf6e4d6;
+    background-color: #fcf6e4e7;
 }
-.active { /*active page marker*/
-    
-    background-color: #519cebaf; 
-}
+
 
 /* background for home page*/
 .bg-box {
@@ -45,9 +42,10 @@ a {
 /* Footer css */
 
 .footer{
-    background-color: #fcf6e4d6;
+    background-color: #fcf6e4e7;
     position: relative; 
     z-index: 2; 
+    
 }
 
 .contact-info {
@@ -64,6 +62,97 @@ p.text-muted { /*copyright text*/
     margin-bottom: 20px;
     font-family: 'Dancing Script', cursive;
 }
+
+/* Menu css */
+/* https://themewagon.github.io/feane/index.html */
+/* If deciding to override within a specific context */
+
+.container {
+    max-width: none;
+}
+
+.food-section{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.menu-title{
+    padding-top: 50px;
+    font-size: 50px;
+    color: #f8e42e;
+
+}
+.food-section , .filters-menu, .filters-content{
+    position: relative; 
+    z-index: 2; 
+}
+
+.food-section .filters-menu {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 25px 0 20px 0;
+}
+
+.food-section .filters-menu li {
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: #f1f2f3;
+}
+
+.food-section .box {
+    position: relative;
+    margin-top: 25px;
+    background-color: #fcf6e4e7;
+    border-radius: 10px;
+    color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #fcf6e4e7 25px, #fcf6e4e7 25px);
+}
+
+.food-section .box .img-box {
+    background: #fcf6e4e7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 215px;
+    border-radius: 0 0 0 45px;
+    margin: -1px;
+    padding: 25px;
+}
+
+.food-section .box .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+
+.active { /*active page marker*/
+    
+    background-color: #519cebaf !important;
+}
+
 @media (max-width: 992px) {
     .navbar-nav .nav-link {
         padding-right: 0;
