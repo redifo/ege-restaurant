@@ -51,7 +51,12 @@ a {
     line-height: 0.8; 
 }
 
-
+.footer h5 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
 
 
 @media (max-width: 768px) {
