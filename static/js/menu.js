@@ -1,20 +1,14 @@
+//https://github.com/themewagon/feane
+$(window).on('load', function () {
+    var $grid = $('.grid').isotope({
+        itemSelector: '.all',
+    });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const filterButtons = document.querySelectorAll('.filters-menu li');
-    const items = document.querySelectorAll('.grid .box');
+    $('.filters-menu li').click(function () {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filterValue = button.getAttribute('data-filter').substring(1); 
-            items.forEach(item => {
-                if (filterValue === item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-        });
+        $('.filters-menu li').removeClass('active');
+        $(this).addClass('active');
     });
 });

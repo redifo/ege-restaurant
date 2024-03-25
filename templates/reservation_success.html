@@ -1,11 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-<div class="container">
-    <h1>Reservation Successful!</h1>
-    <p>Your reservation for {{ reservation.date }} at {{ reservation.time }} has been confirmed.</p>
-    <p>Details: {{ reservation.number_of_guests }} guests, Location: {{ reservation.table_location }}</p>
-    
-  
-    <a href="{% url 'edit_reservation' reservation.pk %}" class="btn btn-primary">Edit Reservation</a>
+<div class="bg-box">
+  <img src="{% static '\img\reservation-bg.webp' %}" alt="hero-background">
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <div class="reservation-box">
+      <h1>Reservation Successful!</h1>
+      <p>Your reservation for {{ reservation.date }} at {{ reservation.time }} has been confirmed.</p>
+      <p>Details: {{ reservation.number_of_guests }} guests, Location: {{ reservation.table_location }}</p>
+      <p>You will recieve a confirmation of your reservation via email shortly.</p>
+
+      <a href="{% url 'edit_reservation' reservation.pk %}" class="btn btn-primary">Edit Reservation</a>
+    </div>
   </div>
+</div>
 {% endblock %}

@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Reservation
 from .forms import ReservationForm
 from django.utils import timezone
+from django.contrib import messages
 
 def make_reservation(request):
     # Initialize past and future reservations only if user is authenticated
@@ -50,3 +51,9 @@ def edit_reservation(request, pk):
         form = ReservationForm(instance=reservation)
     return render(request, 'edit_reservation.html', {'form': form, 'reservation': reservation})
 
+def delete_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk)
+    if request.method == "POST":
+        reservation.delete()
+        messages.success(request, 'Reservation successfully deleted.')
+        return redirect('reservations')  # Redirect to a URL where you list reservations or to the home page

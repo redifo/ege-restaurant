@@ -80,8 +80,9 @@ p.text-muted { /*copyright text*/
 }
 .menu-title{
     padding-top: 50px;
-    font-size: 50px;
-    color: #f8e42e;
+    font-size: 65px;
+    font-weight:900;
+    color: #f8da2e;
 
 }
 .food-section , .filters-menu, .filters-content{
