@@ -19,8 +19,8 @@
 
     <div class="col-md-6">
         <div class="reservation-box">
-            <h2>Your Reservations</h2>
-            {% for reservation in reservations %}
+            <h2>Your Upcoming Reservations</h2>
+            {% for reservation in future_reservations %}
             <div class="reservation-entry">
                 <p><strong>Date:</strong> {{ reservation.date }} <strong>Time:</strong> {{ reservation.time }}</p>
                 <p><strong>Guests:</strong> {{ reservation.number_of_guests }} <strong>Location:</strong> {{ reservation.table_location }}</p>
@@ -34,17 +34,15 @@
     </div>
 </div>
 <div class="col-md-12">
-    <div class="reservation-box ml-0 mr-0">
+    <div class="reservation-box ml-0 mr-0 mt-4">
         <h2>Your Past Reservations</h2>
-        {% for reservation in reservations %}
-        <div class="reservation-entry">
+        {% for reservation in past_reservations %}
+        <div class="reservation-entry"
             <p><strong>Date:</strong> {{ reservation.date }} <strong>Time:</strong> {{ reservation.time }}</p>
             <p><strong>Guests:</strong> {{ reservation.number_of_guests }} <strong>Location:</strong> {{ reservation.table_location }}</p>
-            <!-- Edit button -->
-            <a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary">Edit</a>
         </div>
         {% empty %}
-        <p>You have no upcoming reservations.</p>
+        <p>You have no past reservations.</p>
         {% endfor %}
     </div>
 </div>
