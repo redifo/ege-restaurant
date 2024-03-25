@@ -56,4 +56,4 @@ def delete_reservation(request, pk):
     if request.method == "POST":
         reservation.delete()
         messages.success(request, 'Reservation successfully deleted.')
-        return redirect('reservations')  # Redirect to a URL where you list reservations or to the home page
+        return redirect('reservations')  # Redirect to reservations

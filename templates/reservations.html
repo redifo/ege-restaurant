@@ -5,9 +5,20 @@
 <div class="bg-box">
     <img src="{% static '\img\reservation-bg.webp' %}" alt="hero-background">
 </div>
+<div class="row alert-row bg-light">
+    {% if messages %}
+    <div class="alert-messages ml-3">
+      {% for message in messages %}
+      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
 <div class="row">
     <div class="col-md-6 text-center">
-        <div class="reservation-box">
+        <div class="reservation-box mt-0">
             <h2>Make a Reservation</h2>
             <form method="post">
                 {% csrf_token %}
@@ -18,7 +29,7 @@
     </div>
 
     <div class="col-md-6">
-        <div class="reservation-box">
+        <div class="reservation-box mt-0">
             <h2>Your Upcoming Reservations</h2>
             {% for reservation in future_reservations %}
             <div class="reservation-entry">

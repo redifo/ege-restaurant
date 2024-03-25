@@ -160,6 +160,12 @@ p.text-muted { /*copyright text*/
     background-color: #fcf6e4e7;
     border-radius: 10px;
 }
+/*alerts row styles */
+
+.alert-row{
+    margin-top: 75px;
+    margin-left: 30px;
+}
 
 .active { /*active page marker*/
     
