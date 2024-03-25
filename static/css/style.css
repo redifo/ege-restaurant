@@ -160,7 +160,10 @@ p.text-muted { /*copyright text*/
     background-color: #fcf6e4e7;
     border-radius: 10px;
 }
-/*alerts row styles */
+/*alerts  styles */
+.alert-success {
+    color: black;
+}
 
 .alert-row{
     margin-top: 75px;

@@ -39,7 +39,11 @@
                 <a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary">Edit</a>
             </div>
             {% empty %}
+            {% if request.user.is_authenticated %}
             <p>You have no upcoming reservations.</p>
+            {% else %}
+            <p>Please <a class="text-primary font-weight-bolder" href="../accounts/login/">log in</a> to view your upcoming reservations.</p>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -53,7 +57,11 @@
             <p><strong>Guests:</strong> {{ reservation.number_of_guests }} <strong>Location:</strong> {{ reservation.table_location }}</p>
         </div>
         {% empty %}
-        <p>You have no past reservations.</p>
+        {% if request.user.is_authenticated %}
+        <p>You have no upcoming reservations.</p>
+        {% else %}
+        <p>Please <a class="text-primary font-weight-bolder" href="../accounts/login/">log in</a> to view your upcoming reservations.</p>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
