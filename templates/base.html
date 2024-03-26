@@ -37,7 +37,8 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md fixed-top p-0">
-        <a class="navbar-brand ml-2" href="#"><img src="{% static 'img/logo-removebg.png' %}" alt="logo" width="50" height="50" class="d-inline-block mr-2">Ege Restaurant</a>
+        <a class="navbar-brand ml-2" href="#"><img src="{% static 'img/logo-removebg.png' %}" alt="logo" width="50"
+                height="50" class="d-inline-block mr-2">Ege Restaurant</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
@@ -57,20 +58,30 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item p-2 {% if request.path == logout_url %}active{% endif %}">
-                    <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}"><i class="fa fa-user" aria-hidden="true"></i> Logout </a>
+                    <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}"><i class="fa fa-user"
+                            aria-hidden="true"></i> Logout </a>
                 </li>
                 {% else %}
                 <li class="nav-item p-2 {% if request.path == signup_url %}active{% endif %}">
-                    <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}"><i class="fa fa-user" aria-hidden="true"></i> Register </a>
+                    <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}"><i class="fa fa-user"
+                            aria-hidden="true"></i> Register </a>
                 </li>
                 <li class="nav-item p-2 {% if request.path == login_url %}active{% endif %}">
-                    <a class="nav-link" aria-current="page" href="{% url 'account_login' %}"><i class="fa fa-user" aria-hidden="true"></i> Login </a>
+                    <a class="nav-link" aria-current="page" href="{% url 'account_login' %}"><i class="fa fa-user"
+                            aria-hidden="true"></i> Login </a>
                 </li>
                 {% endif %}
             </ul>
         </div>
+        
     </nav>
-
+    <div class="user-info">
+        {% if user.is_authenticated %}
+        <p class="">You are logged in with email: <strong>{{ user.email }}</strong></p>
+        {% else %}
+        <p class="">You are not logged in</p>
+        {% endif %}
+    </div>
     <!-- Main Content -->
     <div class="container mt-0 ml-0 mr-0 pr-0 pl-0 ">
         {% block content %}
@@ -122,4 +133,5 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/menu.js' %}"></script>
+
 </html>
