@@ -139,7 +139,7 @@ p.text-muted { /*copyright text*/
     color: black;
     border-radius: 15px;
     overflow: hidden;
-    background: linear-gradient(to bottom, #fcf6e4e7 25px, #fcf6e4e7 25px);
+    background: linear-gradient(to bottom, #fcf6e494 25pxrgb(252, 246, 228)8c 25px);
 }
 
 .food-section .box .img-box {
@@ -158,6 +158,17 @@ p.text-muted { /*copyright text*/
     margin: -1px;
     padding: 25px;
 }
+.food-section .box .img-box img {
+    max-width: 100%;
+    max-height: 195px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    vertical-align: middle;
+    border-style: none;
+}
+.detail-box{
+    padding: 20px;
+}
 
 .food-section .box .options {
     display: -webkit-box;
@@ -167,9 +178,7 @@ p.text-muted { /*copyright text*/
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-.detail-box{
-    padding: 10px;
-}
+
 /*reservation page styles */ 
 .reservation-box {
     margin-top: 75px;
