@@ -17,6 +17,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+#Got the idea of automatic debug value setting from my mentor Jubril
 try:
     from env import DEBUG_DEV
 except ImportError:

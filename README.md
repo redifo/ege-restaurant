@@ -83,14 +83,22 @@ The main goal of the Ege Restaurant website was to make it simple for customers 
 
 ## Colour Scheme
 
+#F1DFA2 (Cream): This soft cream color forms the background of various sections, offering a warm and inviting ambiance that's easy on the eyes.
+#FCF6E4 (Off-White): Used for background highlights and to create a clean, uncluttered look, enhancing the content's readability.
+Accent Colours:
+#F8DA2E (Sunflower Yellow): Used for menu title to draw attention.
+#519CEB (Sky Blue): Indicates active page links and button hovers, adding a refreshing contrast against the warmer tones.
+Text:
+#000000 (Black): Provides excellent readability against the lighter background shades, used for the majority of the text.
+This colour scheme was selected to balance warmth and energy, creating an inviting digital environment that's both aesthetically pleasing and functional. The use of contrasting colours for interactive elements ensures users can easily navigate and interact with the website.
 
 
 ## Typography
 
-The main font used is Verdana, but Tangerine was used for the main logo text on the navbar
+
 
 ## Logo and Favicon
 
-The logo was created using an online logo creator - [Brandcrowd](https://www.brandcrowd.com/)
+
 
 ## Wireframes
