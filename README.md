@@ -9,7 +9,7 @@ ___
 
 It is a fullstack restaurant website that showcases the menu and allows users to create an account, make and edit reservations.
 
-Link to live site - [https://ege-restaurant-9c7a6a3b1543.herokuapp.com/](https://ege-restaurant-9c7a6a3b1543.herokuapp.com/)
+Link to live site - [Ege Restaurant Deployed link](https://ege-restaurant-9c7a6a3b1543.herokuapp.com/)
 
 ## CONTENTS
 
@@ -17,11 +17,6 @@ Link to live site - [https://ege-restaurant-9c7a6a3b1543.herokuapp.com/](https:/
     - [My Girlfriends Dream Restaurants Website](#my-girlfriends-dream-restaurants-website)
   - [CONTENTS](#contents)
   - [Site Objectives](#site-objectives)
-- [User Experience/UX](#user-experienceux)
-  - [Target Audience](#target-audience)
-  - [User Stories](#user-stories)
-    - [New Visitor Goals](#new-visitor-goals)
-    - [Existing Visitor Goals](#existing-visitor-goals)
 - [Design Choices](#design-choices)
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
@@ -56,17 +51,70 @@ Link to live site - [https://ege-restaurant-9c7a6a3b1543.herokuapp.com/](https:/
 
 ___
 
-## Site Objectives
+## Strategy Plane
 
-The main goal of the Ege Restaurant website was to make it simple for customers to book tables online, offering clear options for reservation details. It was also designed to showcase the menu in an easily updatable format for the admin, allowing for quick changes to menu items or prices. Additionally, the site aims to improve the management of reservations, giving the admin a clear overview of booking details, such as the number of reservations and specific customer requests, enhancing the overall efficiency and customer service experience.
+The core objective for Ege Restaurant's website is to enhance the dining experience by enabling customers to make detailed reservations easily, view the menu, and interact with the restaurant efficiently online. This project aims to provide a seamless reservation system, showcase the restaurant's menu, and enable the admin to manage reservations and menu items effectively.
 
-# User Experience/UX
+### Target Audience
 
-## Target Audience
+-  Individuals who are seeking a high-quality Mediterranean dining experience in Cyprus. Anyone looking to make online reservations for this restaurant. 
+- Restaurant owners
 
--  The target audience for this website is individuals who are seeking a high-quality Mediterranean dining experience in Cyprus. Anyone looking to make online reservations for this restaurant
+### Site Goals
 
-## User Stories
+-  Develop a user-friendly website that allows for easy navigation and interaction.
+-  Implement an efficient online reservation system that simplifies the booking process for customers.
+-  Showcase the restaurant's Mediterranean cuisine through a detailed and visually appealing menu.
+-  Provide the restaurant's administration with tools to manage reservations, menu items, and customer interactions effectively.
+
+## Scope Plane
+
+Focusing on essential features that need to be implemented for a functional and effective website, we categorize them into must-have and nice-to-have, guided by MoSCoW prioritization.
+
+### Necessary Features (Must-Have):
+User authentication for reservation management.
+A dynamic reservation system that allows customers to book tables online.
+A comprehensive menu display, including descriptions and images of the dishes.
+An admin dashboard for managing reservations, menu items, and viewing reservation statistics.
+
+### Nice-to-Have Features:
+Notification system for reservation actions.
+Email SMTP setup for sending confirmation and promotional emails.
+Waiting list functionality for fully booked dates.
+Special request management during the reservation process.
+
+## Structure Plane
+With the features defined, we can outline the user stories, mapping out the interactions users will have with the website.
+
+### User Authentication
+
+| User Story                                                                                                           | Priority       |
+|----------------------------------------------------------------------------------------------------------------------|----------------|
+| As a new user, I want to register on the website, so I can manage my reservations.                 | **MUST HAVE**  |
+| As an existing user, I want to log in and out of my account, to access my dashboard.         | **MUST HAVE**  |
+
+### Reservation Management
+
+| User Story                                                                                                           | Priority       |
+|----------------------------------------------------------------------------------------------------------------------|----------------|
+| As a user, I want to make a reservation, to ensure I have a table.                | **MUST HAVE**  |
+| As a user, I want to view, update, and cancel my reservations, for flexibility.         | **MUST HAVE**  |
+| As a user, I want to select a specific seat or area, for a personalized experience.         | **SHOULD HAVE**  |
+| As a user, I want to be notified of reservation actions, for up-to-date information.        | **COULD HAVE**  |
+
+### Menu Interaction
+
+| User Story                                                                                                           | Priority       |
+|----------------------------------------------------------------------------------------------------------------------|----------------|
+| As a user, I want to browse the menu, to explore the dishes offered.                | **MUST HAVE**  |
+| As an admin, I want to manage menu items, to keep the menu current.        | **SHOULD HAVE**  |
+
+### Additional Features
+
+| User Story                                                                                                           | Priority       |
+|----------------------------------------------------------------------------------------------------------------------|----------------|
+| As a user, I want to join a waiting list, for the opportunity to dine on busy days.               | **COULD HAVE**  |
+| As a user, I want to make special requests with my reservation, for customized service.       | **COULD HAVE**  |
 
 ### New Visitor Goals
 
@@ -91,7 +139,6 @@ Accent Colours:
 Text:
 #000000 (Black): Provides excellent readability against the lighter background shades, used for the majority of the text.
 This colour scheme was selected to balance warmth and energy, creating an inviting digital environment that's both aesthetically pleasing and functional. The use of contrasting colours for interactive elements ensures users can easily navigate and interact with the website.
-
 
 ## Typography
 
@@ -141,13 +188,16 @@ I have been mindful during coding to ensure that the website is as accessible fr
 * Choosing a sans serif font for the website - sans serif fonts are known by their easy readibility.
 * Making sure that there is sufficient colour contrast.
 
-## Technologies Used
+## Technologies Frameworks, Libraries & Programs Used
 
-### Languages Used
+### Frameworks, Libraries and packages
+*  [gunicorn](https://pypi.org/project/gunicorn/) - Python WSGI HTTP Server for UNIX.
+*  [psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter.
+*  [whitenoise](https://pypi.org/project/whitenoise/) - static file serving for Python web apps.
+*  [django-allauth](https://docs.allauth.org/en/latest/) - authentication, registration, account management.
+*  [cloudinary](https://pypi.org/project/cloudinary/) -  Image storage.
 
-HTML, CSS, js
-
-### Frameworks, Libraries & Programs Used
+### Other Programs Used
 
 * [wireframe.cc](https://wireframe.cc/) - Used to create wireframes.
 
@@ -185,7 +235,7 @@ If working locally, set up a virtual environment and open your project in your I
 
 ## **Project Setup**
 
-Below, I have mentioned the versions of the libraries used to prevent any version incompability  issues.
+Below, I have mentioned the versions of the libraries used to prevent any version incompability issues .
 
 1. Install **Django** and **gunicorn**:
    - `pip install Django==5.0.3 gunicorn==20.1.0`
@@ -218,7 +268,7 @@ For the database, I am using PostgreSQL through ElephantSQL: [ElephantSQL](https
 
 In settings.py, configure your database, static files, and Cloudinary settings. Include your database URL, Cloudinary URL, and secret key in your environment variables. Set up STATICFILES_STORAGE to use whitenoise for static file management. Don't forget to configure AUTHENTICATION_BACKENDS to include both Django's default and allauth's authentication backends.
 
-1. Although if you copy directly from my githuib repository the settings.py should come with all the changes i made i wanted to document my changes. Changes I made in the default **settings.py** file: 
+1. Although if you copy directly from my githuib repository the settings.py should come with all the changes i made, i wanted to document my changes. Changes I made in the default **settings.py** file: 
     ```
 import os
 import dj_database_url
