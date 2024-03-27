@@ -167,6 +167,172 @@ HTML, CSS, js
   
 * [convertio.co](https://convertio.co) To covert images into webp format.
 
+* [Am i responsive](https://ui.dev/amiresponsive) to create the responsive mockup view.
+
 * [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
 
 - - -
+
+# **Deployment**
+
+Here is the link to the deployed project. [Ege Restaurant]().
+
+## **Create Repository**
+
+First, create a new repository on GitHub. i have used the [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template). 
+
+If working locally, set up a virtual environment and open your project in your IDE. For virtual environment setup, you can use the command python -m venv .venv.
+
+## **Project Setup**
+
+Below, I have mentioned the versions of the libraries used to prevent any version incompability  issues.
+
+1. Install **Django** and **gunicorn**:
+   - `pip install Django==5.0.3 gunicorn==20.1.0`
+2. Install supporting **libraries**:
+   - `pip install dj-database-url==0.5.0`
+   - `pip install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15`
+   - `pip install psycopg2==2.9.9`
+   - `pip install django-allauth==0.57.2`
+   - `pip install django-summernote==0.8.20.0`
+   - `pip install whitenoise==5.3.0`
+3. Create **requirements.txt** file:
+   - `pip freeze --local > requirements.txt`
+4. Create a Django project:
+   - `django-admin startproject your_project_name` 
+5. Run the local server
+   - `python manage.py runserver`
+   
+## **Database Setup**
+
+For the database, I am using PostgreSQL through ElephantSQL: [ElephantSQL](https://www.elephantsql.com/).
+
+1. Log in to your account
+2. Create an instance on ElephantSQL and obtain the database URL.
+
+## **Cloudinary Setup**
+
+1. For Cloudinary, sign up and obtain your Cloudinary URL for media management. [Cloudinary](https://cloudinary.com/)  **API Environment variable**
+
+## **File Changes**
+
+In settings.py, configure your database, static files, and Cloudinary settings. Include your database URL, Cloudinary URL, and secret key in your environment variables. Set up STATICFILES_STORAGE to use whitenoise for static file management. Don't forget to configure AUTHENTICATION_BACKENDS to include both Django's default and allauth's authentication backends.
+
+1. Although if you copy directly from my githuib repository the settings.py should come with all the changes i made i wanted to document my changes. Changes I made in the default **settings.py** file: 
+    ```
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
+
+#Got the idea of automatic debug value setting from my mentor Jubril
+try:
+    from env import DEBUG_DEV
+except ImportError:
+    DEBUG_DEV = False 
+
+DEBUG = DEBUG_DEV
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+#allowed hosts for local ide and heroku deployment
+ALLOWED_HOSTS = ['.herokuapp.com',
+                 '127.0.0.1',]
+
+#https://docs.allauth.org/en/latest/account/advanced.html
+#settings Used for email login with allauth
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+#https://haiiiiiyun.github.io/django__Create_email_login_authentication_with_django-allauth_in_Django/
+
+#Don't forget to configure AUTHENTICATION_BACKENDS to include both Django's default and allauth's authentication backends.
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+#check your installed app settings against my settings
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django_summernote',
+    'menu',
+    'reservations',
+    'home',
+    'django_rename_app',
+    'cloudinary',
+    'notifications',
+    ]
+
+#Templates directory code change
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [TEMPLATES_DIR],
+        .
+        .
+        .
+        },
+]
+    ```
+
+2. Create a **env.py** file in your main directory copy the contents below into your file. Make sure the file is added to *.gitignore*:
+    ```
+    import os
+
+    DEBUG_DEV=True
+
+    os.environ.setdefault("DATABASE_URL", "Your_url")
+
+    os.environ.setdefault("SECRET_KEY", "Your_url")
+
+    os.environ.setdefault("CLOUDINARY_URL", "Your_url")
+    ```
+3. After these changes, run `python manage.py migrate` to migrate your database structure to the database.
+
+## **Heroku Setup**
+
+1. Create a Heroku app.
+2. Link your GitHub repository to Heroku.
+3. Select your created app and open the *Settings* tab 
+4. At the *Config Vars* section click *Reveal Config Vars* and add the following:
+   - **DATABASE_URL** with the copied URL from ElephantSQL
+   - **SECRET_KEY** with your secret key
+   - **PORT** with the value 8000
+   - **CLOUDINARY_URL** with the copied URL from Cloudinary
+5. Click on *Deploy Branch* at the bottom of the page
+
+## **Forking**
+
+Forking creates a copy of the project on GitHub. Follow these steps to fork this repository:
+1. Log in to your GitHub account and navigate to [Ege restaurant Repository]().
+2. Click the **Fork** button on the top right of the repository.
+3. You can now open the forked copy of this project as your own repository.
+4. Look through the steps mentioned above to confidently work on the project.
+
+Remember to replace placeholder texts with specific instructions related to your project setup. This guide should help in successfully deploying your Django restaurant website to Heroku, with PostgreSQL as your database and Cloudinary for managing menu item media files.
