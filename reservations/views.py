@@ -4,6 +4,7 @@ from .models import Reservation
 from .forms import ReservationForm
 from django.utils import timezone
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 
 def make_reservation(request):
     # Initialize past and future reservations only if user is authenticated
@@ -11,6 +12,7 @@ def make_reservation(request):
     if request.user.is_authenticated:
         past_reservations = Reservation.objects.filter(email=request.user.email, date__lt=timezone.now()).order_by('date', 'time')
         future_reservations = Reservation.objects.filter(email=request.user.email, date__gte=timezone.now()).order_by('date', 'time')
+    
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -42,6 +44,9 @@ def reservation_success(request, pk):
 
 def edit_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
+    
+    if reservation.customer != request.user:
+        raise PermissionDenied
     if request.method == "POST":
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
