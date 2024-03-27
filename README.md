@@ -78,3 +78,19 @@ The main goal of the Ege Restaurant website was to make it simple for customers 
 
 -Log into their account seamlessly.
 -Review their reservation history and manage future reservations.
+
+# Design Choices
+
+## Colour Scheme
+
+
+
+## Typography
+
+The main font used is Verdana, but Tangerine was used for the main logo text on the navbar
+
+## Logo and Favicon
+
+The logo was created using an online logo creator - [Brandcrowd](https://www.brandcrowd.com/)
+
+## Wireframes

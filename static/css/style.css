@@ -29,9 +29,7 @@ a {
     padding: 15px;
     margin-top: 70px;
     background-color: #f1dfa2e3;
-    position: absolute;
-
-   
+    position: absolute; 
     z-index: 100;
     font-size: 14px;
 }
