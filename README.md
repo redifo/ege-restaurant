@@ -7,7 +7,7 @@
 Portfolio 4 project as part of the Diploma in Full Stack Software Development by Code Institute.
 ___
 
-It is a fullstack restaurant website that allows users to create an account, make and edit reservations.
+It is a fullstack restaurant website that showcases the menu and allows users to create an account, make and edit reservations.
 
 Link to live site - [https://ege-restaurant-9c7a6a3b1543.herokuapp.com/](https://ege-restaurant-9c7a6a3b1543.herokuapp.com/)
 
@@ -53,3 +53,28 @@ Link to live site - [https://ege-restaurant-9c7a6a3b1543.herokuapp.com/](https:/
   - [Credits](#credits)
   - [Media](#media)
   - [Acknowledgments](#acknowledgments)
+
+___
+
+## Site Objectives
+
+The main goal of the Ege Restaurant website was to make it simple for customers to book tables online, offering clear options for reservation details. It was also designed to showcase the menu in an easily updatable format for the admin, allowing for quick changes to menu items or prices. Additionally, the site aims to improve the management of reservations, giving the admin a clear overview of booking details, such as the number of reservations and specific customer requests, enhancing the overall efficiency and customer service experience.
+
+# User Experience/UX
+
+## Target Audience
+
+-  The target audience for this website is individuals who are seeking a high-quality Mediterranean dining experience in Cyprus. Anyone looking to make online reservations for this restaurant
+
+## User Stories
+
+### New Visitor Goals
+
+- Quickly grasp what the site and content is about.
+- Navigate the website effortlessly to explore menu options and reservation details.
+- Register for an account to manage reservations and receive updates.
+
+### Existing Visitor Goals
+
+-Log into their account seamlessly.
+-Review their reservation history and manage future reservations.
