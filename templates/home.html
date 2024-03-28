@@ -6,5 +6,23 @@
 <div class="bg-box">
     <img src="{% static '\img\hero-bg.webp' %}" alt="background-sea-table">
   </div>
-  <div class="reservation-box">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center mt-5">
+        <!-- View Menu Box -->
+        <div class="reservation-box">
+            <h2>View Menu</h2>
+            <p>Explore our delicious menu offerings.</p>
+            <a href="{{menu_url}}" class="btn btn-warning">View Menu</a>
+        </div>
+    </div>
+    <div class="col-md-6 text-center mt-5 mb-3">
+        <!-- Make Reservation Box -->
+        <div class="reservation-box">
+            <h2>Make Reservation</h2>
+            <p>Reserve a table for an unforgettable dining experience.</p>
+            <a href="{{reservations_url}}" class="btn btn-warning">Make Reservation</a>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
