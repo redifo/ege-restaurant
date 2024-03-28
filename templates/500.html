@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- https://docs.djangoproject.com/en/5.0/ref/views/-->
+<div class="bg-box">
+  <img src="{% static '\img\reservation-bg.webp' %}" alt="hero-background">
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center mt-5">
+    <div class="reservation-box">
+        <h1>An error occurred</h1>
+        <p>{{ exception_type }}: {{ exception_value }}</p>
+        <pre>{{ traceback }}</pre>
+    </div>
+  </div>
+</div>
+{% endblock %}
