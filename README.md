@@ -157,7 +157,6 @@ Favicons created using: https://favicon.io/favicon-converter/
 Wireframes were created for mobile and desktop using [wireframe.cc](https://wireframe.cc/). For other devices wireframes were not seen as a necessity. Wireframes for other pages were not developed before development.
 
 ![Wireframe Home Desktop](documentation/wireframes/wireframe-home.png)
-![Wireframe Home Mobile](documentation/wireframes/wireframe-home.png)
 ![Wireframe menu Desktop](documentation/wireframes/wireframe-menu-lrg.png)
 ![Wireframe menu Mobile](documentation/wireframes/wireframe-menu-sm.png)
 ![Wireframe reservations Desktop](documentation/wireframes/wireframe-reservations.png)
@@ -167,7 +166,7 @@ Wireframes were created for mobile and desktop using [wireframe.cc](https://wire
 
 ## Database Plan
 
-The database for the restaurant website consists of four main models: Table, Reservation, SpecialRequest, and MenuItem, along with an Email model for managing emails. Altough the email setup could not implemented due to time constraints.
+The database for the restaurant website consists of four main models: Table, Reservation, SpecialRequest, and MenuItem, along with an Email model for managing emails. Although the email setup could not implemented for the project submission due to time constraints.
 
 Table: Represents restaurant tables, specifying their number, capacity, and location (Garden, Bar, or Dining Room). This helps manage seating arrangements.
 Reservation: Links customers (registered or not) to table bookings, recording details like email, phone, name, date, time, number of guests, and table location. It allows for tracking both pending and confirmed reservations.
@@ -194,7 +193,7 @@ The database diagram was created using https://dbdiagram.io/.
 I have been mindful during coding to ensure that the website is as accessible friendly as possible. This has been have achieved by:
 
 * Giving all buttons a hover state to enhance the user experience by making the navigation elements responsive, ensuring that users are aware of clickable elements and encouraging engagement with the website's content.
-* Choosing a sans serif font for the website - sans serif fonts are known by their easy readibility.
+* Choosing a sans serif font for the website - sans serif fonts are known by their easy readability.
 * Making sure that there is sufficient colour contrast.
 
 ## Technologies Frameworks, Libraries & Programs Used
@@ -286,7 +285,7 @@ For the database, I am using PostgreSQL through ElephantSQL: [ElephantSQL](https
 In settings.py, configure your database, static files, and Cloudinary settings. Include your database URL, Cloudinary URL, and secret key in your environment variables. Set up STATICFILES_STORAGE to use whitenoise for static file management. Don't forget to configure AUTHENTICATION_BACKENDS to include both Django's default and allauth's authentication backends.
 
 1. Although if you copy directly from my githuib repository the settings.py should come with all the changes i made, i wanted to document my changes. Changes I made in the default **settings.py** file: 
-    ```
+```    
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -366,7 +365,7 @@ TEMPLATES = [
         .
         },
 ]
-    ```
+```   
 
 2. Create a **env.py** file in your main directory copy the contents below into your file. Make sure the file is added to *.gitignore*:
     ```
