@@ -1,0 +1,218 @@
+/* Genaral css*/
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    flex: 1;
+}
+a {
+    color: black;
+}
+/* user info line*/
+
+.user-info{
+    align-self: flex-end;
+    margin-right: 240px;
+    
+    
+}
+.user-info p{
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 70px;
+    background-color: #f1dfa2e3;
+    position: absolute; 
+    z-index: 100;
+    font-size: 14px;
+}
+/* nav bar css*/
+
+.navbar{
+    background-color: #fcf6e4e7;
+}
+
+
+/* background for home page*/
+.bg-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bg-box img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    
+}
+/* Footer css */
+
+.footer{
+    background-color: #fcf6e4e7;
+    position: relative; 
+    z-index: 2; 
+    
+}
+
+.contact-info {
+    line-height: 0.8; 
+}
+
+p.text-muted { /*copyright text*/
+    margin:0px;
+}
+
+.footer h5 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Menu css */
+/* https://themewagon.github.io/feane/index.html */
+
+.container {
+    max-width: none;
+}
+
+.food-section{
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.menu-title{
+    padding-top: 50px;
+    font-size: 65px;
+    font-weight:900;
+    color: #f8da2e;
+
+}
+.food-section , .filters-menu, .filters-content{
+    position: relative; 
+    z-index: 2; 
+}
+
+.food-section .filters-menu {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 25px 0 20px 0;
+}
+
+.food-section .filters-menu li {
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: #f1f2f3;
+}
+
+.food-section .box {
+    position: relative;
+    margin-top: 25px;
+    background-color: #fcf6e4e7;
+    border-radius: 10px;
+    color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #fcf6e494 25pxrgb(252, 246, 228)8c 25px);
+}
+
+.food-section .box .img-box {
+    background: #fcf6e4e7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 215px;
+    border-radius: 0 0 0 45px;
+    margin: -1px;
+    padding: 25px;
+}
+.food-section .box .img-box img {
+    max-width: 100%;
+    max-height: 195px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    vertical-align: middle;
+    border-style: none;
+}
+.detail-box{
+    padding: 20px;
+}
+
+.food-section .box .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+/*reservation page styles */ 
+.reservation-box {
+    margin-top: 75px;
+    margin-left: 20px;
+    margin-bottom: 30 px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fcf6e4e7;
+    border-radius: 10px;
+}
+/*alerts  styles */
+.alert-success {
+    color: black;
+}
+
+.alert-row{
+    margin-top: 75px;
+    margin-left: 30px;
+}
+
+.active { /*active page marker*/
+    
+    background-color: #519cebaf !important;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 10px;
+    } 
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        font-size: 14px;
+        line-height: 0;
+    }
+}
+
+
