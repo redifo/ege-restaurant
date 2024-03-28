@@ -177,7 +177,7 @@ The database for the restaurant website consists of four main models: Table, Res
 
 Table: Represents restaurant tables, specifying their number, capacity, and location (Garden, Bar, or Dining Room). This helps manage seating arrangements.
 Reservation: Links customers (registered or not) to table bookings, recording details like email, phone, name, date, time, number of guests, and table location. It allows for tracking both pending and confirmed reservations.
-SpecialRequest: Captures any special requests associated with a reservation, noting if it's approved. This enhances customer service by attending to specific needs.
+SpecialRequest: Captures any special requests associated with a reservation, with approval option for admin managemenet. This enhances customer service by attending to specific needs.
 MenuItem: Details the food items on the menu, categorized by type (e.g., Starter, Meze, Main Course), including descriptions, prices, availability, and images. This model aids in menu management and presentation.
 Email: Handles the creation of emails for different purposes, with fields for recipient, subject, body, and template type, automating communication with customers.
 
@@ -225,20 +225,86 @@ For the menu page on my website, I've implemented HTML, CSS and Js (filtering) d
 ![menu](documentation/img/menu.png)
 
 ![Admin page for Menu](documentation/img/admin-menuitem.png)
+
 ## Reservations
+
+This page serves as a centralized platform for managing reservations efficiently. Below, we've outlined the key features and functionalities available on this page:
+
+![Reservation page](documentation/img/reservation.png)
+
+Features:
+
+Make a Reservation Form:
+
+Users can easily make new reservations using the intuitive reservation form.
+The form includes fields for inputting reservation details such as date, time, number of guests, and preferred location.
+Upon submission, users receive real-time feedback messages, such as success or error alerts. If the user is logged in, the email field is automatically filled and hidden.
+
+Upcoming Reservations Section:
+
+Authenticated users can view a list of their upcoming reservations.
+Each reservation entry displays essential details such as date, time, number of guests, and location.
+Users have the option to edit their upcoming reservations directly from the page.
+
+Past Reservations Section:
+
+Users can also access a list of their past reservations.
+Similar to the upcoming reservations section, past reservation entries include date, time, number of guests, and location details but has no edit option
+
+Special Requests Integration:
+
+Customers can submit special requests along with their reservations.
+
+Authentication Handling:
+
+Authenticated users have access to both upcoming and past reservations, ensuring a personalized experience.
+Unauthenticated users are prompted to log in before accessing reservation-related functionalities, maintaining security and privacy.
 
 ## Custom Error Pages
 
+For the 403.html page, I've created a custom error page because I wasn't satisfied with the default one. This page informs users that they are not authorized to view the current page. It features a simple design with a background image and a message indicating the unauthorized access.
+
+![Error 403 page](documentation/img/custom-403.png)
+
+For the 500.html page, I created it to gain more information regarding a deployment issue. This error page provides users with details about the error encountered during deployment. It displays the type and value of the exception, along with the traceback information. This helps in diagnosing and troubleshooting deployment issues more effectively.
+
+Overall, both custom error pages serve specific purposes: one addresses authorization issues, while the other assists in diagnosing deployment errors.
+
 ## Future Implementations
+
+Table Selection with Top View of Restaurant:
+
+Enhance user experience by implementing a visual representation of the restaurant layout.
+Provide users with a top view of the restaurant's tables, allowing them to select available tables visually.
+Mark booked tables with color codes to indicate their status.
+
+Waitlist for Fully Booked Times:
+
+Implement a waitlist feature for times when all tables are fully booked.
+Allow users to join a waitlist for their desired booking time.
+Notify users when a table becomes available or offer alternative booking options.
+
+Integration of Email Functionality:
+
+Integrate email functionality for sending notifications to users.
+Notify users about their successful reservations, waitlist updates, and other relevant information.
+Implement email notifications for password reset requests to enhance security and user experience.
+
+Preventing Overbooking with Capacity Checks:
+
+Implement a capacity check system to prevent overbooking of tables.
+Check the capacity of tables in real-time when users attempt to book a table.
+Display warnings or restrict bookings if the selected table or location is at full capacity.
+Utilize AJAX for dynamic data viewing to provide users with instant feedback on table availability and capacity.
 
 ## Technologies Frameworks, Libraries & Programs Used
 
 ### Frameworks, Libraries and packages
-*  [django]()
-*  [Bootstrap v4.6.2]()
-*  [JQuery v3.7.1]()
-*  [isotope]()
-*  [fontawesome]()
+*  [django](https://www.djangoproject.com/) - High-level Python Web framework.
+*  [Bootstrap v4.6.2]() - Front-end framework for developing responsive and mobile-first websites
+*  [JQuery v3.7.1](https://jquery.com/) - Fast, small, and feature-rich JavaScript library, simplifying client-side scripting.
+*  [isotope](https://isotope.metafizzy.co/) - JavaScript library for filtering, sorting, and laying out elements in dynamic grid layouts.
+*  [fontawesome](https://fontawesome.com/) - Comprehensive collection of icons and symbols for web development.
 *  [gunicorn](https://pypi.org/project/gunicorn/) - Python WSGI HTTP Server for UNIX.
 *  [psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter.
 *  [whitenoise](https://pypi.org/project/whitenoise/) - static file serving for Python web apps.
@@ -261,11 +327,9 @@ For the menu page on my website, I've implemented HTML, CSS and Js (filtering) d
 
 * [Favicon.io](https://favicon.io/) To create favicon from the logo created by Dall-e 3.
 
-* [Canva.com](https://www.canva.com/) To edit some of the images generated by dalle-3.
+* [Canva.com](https://www.canva.com/) To edit some of the images generated by dalle-3 and to create the responsive mockup view.
   
 * [convertio.co](https://convertio.co) To covert images into webp format.
-
-* [Am i responsive](https://ui.dev/amiresponsive) to create the responsive mockup view.
 
 * [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
 
@@ -442,6 +506,13 @@ Remember to replace placeholder texts with specific instructions related to your
 
 ## **Acknowledgements**
 
+Grateful thanks to my girlfriend for her unwavering support and feedback throughout this project. Her involvement as my real-life customer has been invaluable.
+
+I extend my appreciation to my mentor, Jubril Akole, for his guidance and expertise. His feedback and encouragement have been instrumental in my development as a developer.
+
 ## **Content**
-https://www.pexels.com/
-## **Media and Design**
+
+
+## **Media**
+
+Background images and logos have been created by dalle-3 (bing). All other images were gathered from [pexels](https://www.pexels.com/)
