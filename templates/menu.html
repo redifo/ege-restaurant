@@ -24,8 +24,13 @@
                 <div class="col-sm-6 col-lg-4 all {{ item.category|slugify }}">
                     <div class="box mb-2">
                         <div>
-                            <div class="img-box">
-                                <img src="https://res.cloudinary.com/dskeexhf9/{{ item.image.url }}" alt="{{ item.name }}">
+                            <div class="img-box"> 
+                                <!-- The image.url by defualt includes http not https therefore i sliced the url and added https to prevent warning of mixed content in the console-->
+                                {% if "http://" in item.image.url %}
+                                <img src="https:{{ item.image.url|slice:'5:' }}" alt="{{ item.name }}">
+                                {% else %}
+                                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                                {% endif %}
                             </div>
                             <div class="detail-box">
                                 <h5>{{ item.name }}</h5>
@@ -40,9 +45,9 @@
                 {% endfor %}
             </div>
         </div>
-        
 
-        
+
+
     </div>
 </section>
 
