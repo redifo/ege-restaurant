@@ -1,12 +1,22 @@
-
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
 
 <div class="bg-box">
     <img src="/static/img/hero-bg.webp" alt="home-background-cafe-interior">
-  </div>
-  <div class="row justify-content-center">
+</div>
+<div class="row alert-row">
+    {% if messages %}
+    <div class="alert-messages ml-3">
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+<div class="row justify-content-center">
     <div class="col-md-6 text-center mt-5">
         <!-- View Menu Box -->
         <div class="reservation-box">

@@ -2,7 +2,7 @@
 
 ### My Girlfriends Dream Restaurants Website
 
-![Ege Restaurant](documentation/img/responsive.png)
+![Ege Restaurant](documentation/img/mockup.png)
 
 Portfolio 4 project as part of the Diploma in Full Stack Software Development by Code Institute.
 ___
@@ -140,9 +140,11 @@ Text:
 #000000 (Black): Provides excellent readability against the lighter background shades, used for the majority of the text.
 This colour scheme was selected to balance warmth and energy, creating an inviting digital environment that's both aesthetically pleasing and functional. The use of contrasting colours for interactive elements ensures users can easily navigate and interact with the website.
 
+![Color Scheme](documentation/img/color-palette.png)
+
 ## Typography
 
-For the website, I chose two main fonts to make it look modern and easy to read. I used 'Work Sans' for the main text because it's clean and straightforward, which helps with reading on screens. Then, for the titles in the footer, I picked 'Dancing Script' because it's a bit more decorative and adds some personality, especially for important sections. These choices help make the site feel welcoming and easy to navigate.
+For the website, I chose two main fonts to make it look modern and easy to read. I used 'Work Sans' for the main text because it's clean and straightforward, which helps with reading on screens. Then, for the titles in the footer, I picked 'Dancing Script' because it's a bit more decorative and adds some personality to the footer. These choices help make the site feel welcoming and easy to navigate.
 
 ## Logo and Favicon
 
@@ -161,8 +163,13 @@ Wireframes were created for mobile and desktop using [wireframe.cc](https://wire
 ![Wireframe menu Mobile](documentation/wireframes/wireframe-menu-sm.png)
 ![Wireframe reservations Desktop](documentation/wireframes/wireframe-reservations.png)
 
+## Accessibility
 
-## Flow Diagram
+I have been mindful during coding to ensure that the website is as accessible friendly as possible. This has been have achieved by:
+
+* Giving all buttons a hover state to enhance the user experience by making the navigation elements responsive, ensuring that users are aware of clickable elements and encouraging engagement with the website's content.
+* Choosing a sans serif font for the website - sans serif fonts are known by their easy readability.
+* Making sure that there is sufficient colour contrast.
 
 ## Database Plan
 
@@ -179,22 +186,50 @@ The database diagram was created using https://dbdiagram.io/.
 ![Database plan](documentation/img/db-diagram.png)
 
 # Features
+## Home
 
-## Registration
+The home screen is kept simple with two buttons, "View Menu" and "Make a Reservation," for a clear and focused user experience, guiding users to essential actions without overwhelming them.
+
+## Authentication
+
+For authentication in my project, I've utilized the AllAuth package. Custom CSS was applied to style the forms according to the design aesthetics.
+
+User Registration:
+
+To create an account, users are prompted to provide their email, username, and password. Clear password requirements are displayed, and in case of invalid input, users receive immediate feedback.
+
+![Register](documentation/img/register.png)
+
+Login:
+
+Users can access the login page to input their credentials. Upon successful login, they are redirected to the homepage. A success message confirms their action.
+
+![Login](documentation/img/signin.png)
+
+Homepage:
+
+After logging in, users are redirected to the homepage. Here, they receive a message confirming their action (signing in or out).
+
+Logout:
+
+Users can choose to log out, which triggers a redirection to the homepage with a corresponding success message.
+
+![Logout](documentation/img/signout.png)
+
+This setup ensures a seamless authentication experience with concise feedback for user actions.
 
 ## Menu
 
+For the menu page on my website, I've implemented HTML, CSS and Js (filtering) designs inspired by this source [source](https://themewagon.github.io/feane/index.html) for a visually appealing look and efficient filtering method for menu items. The images of the menu items are stored on Cloudinary, allowing for easy editing of each menu item, including uploading photos directly from the admin panel. All CRUD (Create, Read, Update, Delete) operations for menu items are exclusively managed through the admin panel.
+
+![menu](documentation/img/menu.png)
+
+![Admin page for Menu](documentation/img/admin-menuitem.png)
 ## Reservations
 
+## Custom Error Pages
+
 ## Future Implementations
-
-### Accessibility
-
-I have been mindful during coding to ensure that the website is as accessible friendly as possible. This has been have achieved by:
-
-* Giving all buttons a hover state to enhance the user experience by making the navigation elements responsive, ensuring that users are aware of clickable elements and encouraging engagement with the website's content.
-* Choosing a sans serif font for the website - sans serif fonts are known by their easy readability.
-* Making sure that there is sufficient colour contrast.
 
 ## Technologies Frameworks, Libraries & Programs Used
 
