@@ -1,4 +1,5 @@
 from django import forms
+import re
 from django.utils import timezone
 from .models import Reservation
 
@@ -19,14 +20,19 @@ class ReservationForm(forms.ModelForm):
         }
         
     def clean_name(self):
-        name = self.cleaned_data['name']
-        if not name.strip():  # Check if the name contains only spaces
-            raise forms.ValidationError("Name cannot be empty or contain only spaces.")
+        name = self.cleaned_data.get('name')  
+        if name is None:  # Check if name is None
+            raise forms.ValidationError("Name cannot be empty.")
+        name = name.strip()  
+        if not name:  # Check if name is empty after stripping whitespace
+            raise forms.ValidationError("Name cannot contain only spaces.")
+        if len(name.strip()) < 3:  # Check if the name has less than 3 characters
+            raise forms.ValidationError("Name must contain at least 3 letters.")
         if re.match(r'^[a-zA-Z\s]+$', name):  # Check if the name contains only letters and spaces
-            return name.strip()  
+            return name  
         else:
             raise forms.ValidationError("Name can only contain letters and spaces.")
-    
+        
     def __init__(self, *args, **kwargs):
         super(ReservationForm, self).__init__(*args, **kwargs)
         self.fields['table_location'].choices = Reservation._meta.get_field('table_location').choices
