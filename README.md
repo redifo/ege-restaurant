@@ -14,40 +14,52 @@ Link to live site - [Ege Restaurant Deployed link](https://ege-restaurant-9c7a6a
 ## CONTENTS
 
 - [Ege Restaurant](#ege-restaurant)
-    - [My Girlfriends Dream Restaurants Website](#my-girlfriends-dream-restaurants-website)
-  - [CONTENTS](#contents)
-  - [Site Objectives](#site-objectives)
+- [My Girlfriends Dream Restaurants Website](#my-girlfriends-dream-restaurants-website)
+- [CONTENTS](#contents)
+- [Strategy Plane](#strategy-plane)
+  - [Target Audience](#target-audience)
+  - [Site Goals](#site-goals)
+- [Scope Plane](#scope-plane)
+  - [Necessary Features](#necessary-features)
+  - [Nice to have Features](#nice-to-have-features)
+- [Structure Plane](#structure-plane)
+  - [User Authentication](#user-authentication)
+  - [Reservation Management](#reservation-management)
+  - [Menu Interaction](#menu-interaction)
+  - [Additional Features](#additional-features)
+  - [New Visitor Goals](#new-visitor-goals)
+  - [Existing Visitor Goals](#existing-visitor-goals)
 - [Design Choices](#design-choices)
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Logo and Favicon](#logo-and-favicon)
   - [Wireframes](#wireframes)
-  - [Flow Diagram](#flow-diagram)
+  - [Accessibility](#accessibility)
   - [Database Plan](#database-plan)
 - [Features](#features)
-  - [Registration](#registration)
-  - [Future Features](#future-features)
-  - [Features Not Included](#features-not-included)
-- [Technologies Used](#technologies-used)
-- [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
+  - [Home](#home)
+  - [Authentication](#authentication)
+  - [Menu](#menu)
+  - [Reservations](#reservations)
+  - [Custom Error Pages](#custom-error-pages)
+  - [Future Implementations](#future-implementations)
 - [Agile](#agile)
+- [Technologies Frameworks, Libraries & Programs Used](#technologies-frameworks-libraries--programs-used)
+  - [Frameworks, Libraries, and Packages](#frameworks-libraries-and-packages)
+  - [Other Programs Used](#other-programs-used)
 - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
-  - [User](#user)
-  - [Bugs](#bugs)
-  - [Lighthouse](#lighthouse)
-  - [Validation Testing](#validation-testing)
-    - [HTML \& CSS](#html--css)
-  - [Python Testing](#python-testing)
-  - [Deployment](#deployment)
-    - [Github Deployment](#github-deployment)
-    - [Creating a Fork](#creating-a-fork)
-    - [Cloning](#cloning)
-    - [Repository deployment-Heroku](#repository-deployment-heroku)
-    - [Deployment of the app](#deployment-of-the-app)
-  - [Credits](#credits)
+- [Deployment](#deployment)
+  - [Create Repository](#create-repository)
+  - [Project Setup](#project-setup)
+  - [Database Setup](#database-setup)
+  - [Cloudinary Setup](#cloudinary-setup)
+  - [File Changes](#file-changes)
+  - [Heroku Setup](#heroku-setup)
+  - [Forking](#forking)
+- [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
+  - [Content](#content)
   - [Media](#media)
-  - [Acknowledgments](#acknowledgments)
 
 ___
 
@@ -297,6 +309,10 @@ Check the capacity of tables in real-time when users attempt to book a table.
 Display warnings or restrict bookings if the selected table or location is at full capacity.
 Utilize AJAX for dynamic data viewing to provide users with instant feedback on table availability and capacity.
 
+## Agile
+
+
+
 ## Technologies Frameworks, Libraries & Programs Used
 
 ### Frameworks, Libraries and packages
@@ -511,6 +527,7 @@ Grateful thanks to my girlfriend for her unwavering support and feedback through
 I extend my appreciation to my mentor, Jubril Akole, for his guidance and expertise. His feedback and encouragement have been instrumental in my development as a developer.
 
 ## **Content**
+
 
 
 ## **Media**
