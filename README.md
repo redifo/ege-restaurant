@@ -84,7 +84,7 @@ Waiting list functionality for fully booked dates.
 Special request management during the reservation process.
 
 ## Structure Plane
-With the features defined, we can outline the user stories, mapping out the interactions users will have with the website.
+With the features defined, I have outlined the user stories, mapping out the interactions users will have with the website. A more detailed version of these user stories can be found here. [Issues page of Ege Restaurant github](https://github.com/redifo/ege-restaurant/issues)
 
 ### User Authentication
 
