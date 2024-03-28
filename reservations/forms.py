@@ -17,7 +17,16 @@ class ReservationForm(forms.ModelForm):
             'number_of_guests': forms.Select(choices=[(i, i) for i in range(1, 9)]),
             'table_location': forms.Select()
         }
-
+        
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        if not name.strip():  # Check if the name contains only spaces
+            raise forms.ValidationError("Name cannot be empty or contain only spaces.")
+        if re.match(r'^[a-zA-Z\s]+$', name):  # Check if the name contains only letters and spaces
+            return name.strip()  
+        else:
+            raise forms.ValidationError("Name can only contain letters and spaces.")
+    
     def __init__(self, *args, **kwargs):
         super(ReservationForm, self).__init__(*args, **kwargs)
         self.fields['table_location'].choices = Reservation._meta.get_field('table_location').choices
