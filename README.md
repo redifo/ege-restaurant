@@ -315,9 +315,9 @@ I employed an agile methodology using GitHub Projects Board to organize my proje
 
 [Project Board](https://github.com/users/redifo/projects/3)
 
-[Issues](https://github.com/redifo/ege-restaurant/issues?q%3Dis%3Aissue%2Bis%3Aclosed)
+[Issues- User stories tasks](https://github.com/redifo/ege-restaurant/issues?q%3Dis%3Aissue%2Bis%3Aclosed)
 
-![project-board](documentation/img/project-board.png.png)
+![project-board](documentation/img/project-board.png)
 
 ![custom-labels](documentation/img/custom-labels.png)
 
