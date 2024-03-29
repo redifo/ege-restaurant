@@ -311,7 +311,17 @@ Utilize AJAX for dynamic data viewing to provide users with instant feedback on 
 
 ## Agile
 
+I employed an agile methodology using GitHub Projects Board to organize my project. I categorized features into Epics and created User Stories, prioritizing them with MoSCoW prioritization. Custom labels were utilized for issue types and Story Points. User Stories, along with Epics and tasks, were added to the board. Sprint-wise, I used milestones, adding issues to the current sprint and moving them accordingly, although in the end i was behind schedule end stopped using sprints after sprint 3. Despite encountering hurdles like changes in database plans and tool limitations, I kept focusing on tasks and adaptations as needed. The agile approach facilitated iterative development, ensuring steady progress and adaptability to challenges.
 
+https://github.com/users/redifo/projects/3
+
+https://github.com/redifo/ege-restaurant/issues?q=is%3Aissue+is%3Aclosed
+
+![project-board](documentation/img/project-board.png.png)
+
+![custom-labels](documentation/img/custom-labels.png)
+
+![issues-closed](documentation/img/issues-closed.png)
 
 ## Technologies Frameworks, Libraries & Programs Used
 
