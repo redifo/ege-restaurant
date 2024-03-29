@@ -153,6 +153,26 @@ To ensure my Python code follows best practices and maintains readability, I use
 - Single Line of Gap: Some sections lacked the recommended two lines of gap between code blocks, so I added the necessary spacing for clarity.
 - Line Too Long Errors: While I managed to address many line too long errors, some instances remained unresolved due to the nature of the code.
 
+![pep8 check](documentation\img\validations\pep8.png)\
+*Some example of pep8 validation results*
+
 These efforts aimed to enhance the quality and maintainability of the Python codebase.
 
+## **Bugs and Fixes**
+
+Issue with internal error on deployment due to static files
+Problem Description:
+Images called using the {% static %} method work correctly in local development but fail to load on Heroku deployment. The application throws an internal error, and the logs display the following error message: ValueError: Missing static files manifest entry for '/img/reservation-bg.webp'. This issue occurs not only with the specific image mentioned in the error but also with every image called using the {% static %} method. Pages that do not utilize this method load normally on Heroku.
+
+Investigation Steps:
+Reviewed the documentation for Whitenoise to ensure correct configuration. Tried switching from ManifestStaticFilesStorage to default Django storage but the issue persisted. [Whitenoise Documentation](https://whitenoise.readthedocs.io/en/stable/django.html)
+Downgraded Django version to 4.1 to rule out version compatibility issues. However, the problem persisted.
+Verified that other static files such as JavaScript load correctly on the affected pages.
+Observed that changing image paths to relative paths to the static folder resolves the issue.
+Resolution Steps:
+To resolve this issue:
+
+Change image paths to relative paths to the static folder instead of using the {% static %} method.
+Additional Notes:
+Further investigation is needed to determine the root cause of the issue with the {% static %} method on Heroku deployment. This workaround provides a temporary solution but does not address the underlying problem.
 

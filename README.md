@@ -224,7 +224,7 @@ After logging in, users are redirected to the homepage. Here, they receive a mes
 
 Logout:
 
-Users can choose to log out, which triggers a redirection to the homepage with a corresponding success message.
+Users can choose to log out, which triggers a redirection to the homepage with a corresponding success message. Logout page did not have a go back button by default so i have added a button that triggers the goback button on the browsers. 
 
 ![Logout](documentation/img/signout.png)
 
@@ -366,7 +366,7 @@ If working locally, set up a virtual environment and open your project in your I
 
 ## **Project Setup**
 
-Below, I have mentioned the versions of the libraries used to prevent any version incompability issues .
+Below, I have mentioned the versions of the libraries used to prevent any version compability issues.
 
 1. Install **Django** and **gunicorn**:
    - `pip install Django==5.0.3 gunicorn==20.1.0`
@@ -522,13 +522,29 @@ Remember to replace placeholder texts with specific instructions related to your
 
 ## **Acknowledgements**
 
-Grateful thanks to my girlfriend for her unwavering support and feedback throughout this project. Her involvement as my real-life customer has been invaluable.
+I want to thank my girlfriend for always supporting and giving feedback on this project. Her role as a real-life customer has been incredibly helpful.
 
-I extend my appreciation to my mentor, Jubril Akole, for his guidance and expertise. His feedback and encouragement have been instrumental in my development as a developer.
+I want to thank Jubril Akole, for guiding me and sharing his expertise. 
 
 ## **Content**
 
+The contents of these URLs were used as a reference when creating the authentication system with email login in Django. Later, I also wanted to create a custom user model that extends the built-in version but this required either complete deletion of migration and database files or careful removal of certain dependencies (migration applied before its dependency error) within the migration files so I didn't include this model in my website.
 
+- [django__Create_email_login_authentication_with_django-allauth_in_Django](https://haiiiiiyun.github.io/django__Create_email_login_authentication_with_django-allauth_in_Django/)
+- [django-allauth Documentation - Advanced](https://docs.allauth.org/en/latest/account/advanced.html)
+- [Django Custom User Model Tutorial](https://learndjango.com/tutorials/django-custom-user-model)
+- [Stack Overflow - Django `manage.py migrate` applied before its dependency](https://stackoverflow.com/questions/38996599/django-manage-py-migration-applied-before-its-dependency)
+
+The content below was used as a reference when creating choice options within the `models.py` files.
+- [Django Model Field Reference](https://docs.djangoproject.com/en/5.0/ref/models/fields/)
+
+The content below was used as a reference when creating custom forms.
+- [Django Form Widgets Reference](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/)
+- [Django ModelForms Documentation](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/#django.forms.ModelForm)
+
+The content below was used as a reference for the creation of the menu page. Some of the HTML and CSS code for the menu item boxes and some of the JavaScript for the filtering method used on the menu page were directly copied from this source.
+- [Feane Theme](https://themewagon.github.io/feane/index.html) 
+- [Feane Theme GitHub Repository](https://github.com/themewagon/feane)
 
 ## **Media**
 
