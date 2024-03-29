@@ -72,50 +72,50 @@ By implementing these measures, user-based restrictions have been enforced to en
 After mostly finishing website i ran lighthouse tests for all main pages for mobile and desktop. 
 After seeing that blue buttons lowered accesibility ratings, I have changed the defualt bootstrap btn-primary buttons to btn-warnings. 
 
-![Lighthouse button issue](documentation\img\lighthouse\button-contrast.png)
+![Lighthouse button issue](documentation/img/lighthouse/button-contrast.png)
 
 Lighthouse also marked my headings in the footer for not following order but after carefully checking decided to ignore this accessibilty issue. 
 
-![Lighthouse heading issue](documentation\img\lighthouse\heading-order.png)
+![Lighthouse heading issue](documentation/img/lighthouse/heading-order.png)
 
 The cloudinary images were rasing warnings in the console for mixed content and lighthouse ofcourse marked this as a problem. The problem was caused by images from cloudinary being loaded over http instead of https. I couldnt figure out the source of the problem by internet searches and after checking that the menu item urls were stored without the https tag infront of the url in the databse. The images were being called with the http tag infront when i call them with item.url. To fix this i have written an if statement within the html that slices that http infront and adds https. 
 
-![Lighthouse mixed content issue](documentation\img\lighthouse\mixed-content-error.png)
+![Lighthouse mixed content issue](documentation/img/lighthouse/mixed-content-error.png)
 
 Lighthouse scores for each main page:
 
-![Lighthouse score home](documentation\img\lighthouse\home-desktop.png)
+![Lighthouse score home](documentation/img/lighthouse/home-desktop.png)
 *Lighthouse score home (desktop)*
 
-![Lighthouse score home](documentation\img\lighthouse\home-mobile.png)
+![Lighthouse score home](documentation/img/lighthouse/home-mobile.png)
 *Lighthouse score home (mobile)*
 
-![Lighthouse score Login](documentation\img\lighthouse\login-desktop.png)
+![Lighthouse score Login](documentation/img/lighthouse/login-desktop.png)
 *Lighthouse score login (desktop)*
 
-![Lighthouse score login](documentation\img\lighthouse\login-mobile.png)
+![Lighthouse score login](documentation/img/lighthouse/login-mobile.png)
 *Lighthouse score login (mobile)*
 
-![Lighthouse score reservation](documentation\img\lighthouse\reservations-desktop.png)
+![Lighthouse score reservation](documentation/img/lighthouse/reservations-desktop.png)
 *Lighthouse score reservation (desktop)*
 
-![Lighthouse score reservation](documentation\img\lighthouse\reservations-mobile.png)
+![Lighthouse score reservation](documentation/img/lighthouse/reservations-mobile.png)
 *Lighthouse score reservation (mobile)*
 
-![Lighthouse score menu](documentation\img\lighthouse\menu-desktop.png)
+![Lighthouse score menu](documentation/img/lighthouse/menu-desktop.png)
 *Lighthouse score menu (desktop)*
 
-![Lighthouse score menu](documentation\img\lighthouse\menu-mobile.png)
+![Lighthouse score menu](documentation/img/lighthouse/menu-mobile.png)
 *Lighthouse score menu (mobile)*
 
-![Lighthouse score register](documentation\img\lighthouse\register-desktop.png)
+![Lighthouse score register](documentation/img/lighthouse/register-desktop.png)
 *Lighthouse score register (desktop)*
 
-![Lighthouse score register](documentation\img\lighthouse\register-mobile.png)
+![Lighthouse score register](documentation/img/lighthouse/register-mobile.png)
 *Lighthouse score register (mobile)*
 
 Menu page lower scores were mainly caused by cloudinary  images, which are not under my control and cannot be optimized further. The load times were giving mixed results for these images and these were also causing best practices errors even though i fixed the mixed content issue. 
-![Lighthouse score menu problem](documentation\img\lighthouse\menu-problems.png)
+![Lighthouse score menu problem](documentation/img/lighthouse/menu-problems.png)
 *Lighthouse score menu problems*
 
 ## **Validation**
@@ -126,7 +126,7 @@ I used the [HTML W3C Validator](https://validator.w3.org/) to validate all of my
 
 No errors were found for all my pages
 
-![Html validator Results](documentation\img\validations\html.png)
+![Html validator Results](documentation/img/validations/html.png)
 
 ### **CSS Validation**
 
@@ -140,7 +140,7 @@ My project comprises two JavaScript files: `main.js` and `menu.js`.
 
 The `main.js` file contains JavaScript code for go back button function and automatic year retrival for footer. Upon validation using JSHint, only one warning appeared that says one unsued variable.
 
-![JS validation main.js](documentation\img\validations\js.png)\
+![JS validation main.js](documentation/img/validations/js.png)
 *JS validation result for main.js*
 
 The `menu.js` file encompasses JavaScript code specific to the menu filter functionality. Following evaluation with JSHint, no errors or warnings were identified in the `menu.js`
@@ -153,7 +153,7 @@ To ensure my Python code follows best practices and maintains readability, I use
 - Single Line of Gap: Some sections lacked the recommended two lines of gap between code blocks, so I added the necessary spacing for clarity.
 - Line Too Long Errors: While I managed to address many line too long errors, some instances remained unresolved due to the nature of the code.
 
-![pep8 check](documentation\img\validations\pep8.png)\
+![pep8 check](documentation/img/validations/pep8.png)
 *Some example of pep8 validation results*
 
 These efforts aimed to enhance the quality and maintainability of the Python codebase.
