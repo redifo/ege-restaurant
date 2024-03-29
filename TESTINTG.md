@@ -147,6 +147,12 @@ The `menu.js` file encompasses JavaScript code specific to the menu filter funct
 
 ### **Python Validation**
 
-* 
+To ensure my Python code follows best practices and maintains readability, I used the [PEP8CI](https://pep8ci.herokuapp.com/) tool. Here's what I found:
+
+- Trailing Whitespaces: I discovered many trailing whitespaces in the code, which I removed to keep it clean and consistent.
+- Single Line of Gap: Some sections lacked the recommended two lines of gap between code blocks, so I added the necessary spacing for clarity.
+- Line Too Long Errors: While I managed to address many line too long errors, some instances remained unresolved due to the nature of the code.
+
+These efforts aimed to enhance the quality and maintainability of the Python codebase.
 
 

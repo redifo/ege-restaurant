@@ -3,5 +3,5 @@ from .views import MenuListView
 
 urlpatterns = [
     path('', MenuListView, name="menu")
-    
+
 ]

@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import MenuItem
 
+
 def MenuListView(request):
-    categories = MenuItem.objects.order_by().values_list('category', flat=True).distinct()
+    categories = MenuItem.objects.order_by().values_list(
+        'category', flat=True).distinct()
     menu_items = MenuItem.objects.all()
     context = {
         'categories': categories,
