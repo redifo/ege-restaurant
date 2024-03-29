@@ -51,21 +51,92 @@ By implementing these measures, user-based restrictions have been enforced to en
 
 | TEST                                             | OUTCOME                                                    | PASS/FAIL |
 |--------------------------------------------------|------------------------------------------------------------|-----------|
-| View Menu Items                                  | Menu items displayed correctly                             | Pass      |
-| Create Reservation                               | Reservation successfully created and displayed             | Pass      |
-| Edit Own Reservation                             | Own reservation details updated successfully                | Pass      |
-| Delete Own Reservation                           | Own reservation deleted successfully                        | Pass      |
+| Create Account | Created successfully | Pass |
+| View Menu Items | Menu items displayed correctly | Pass |
+| Create Reservation | Reservation successfully created and displayed | Pass |
+| Form validation when Creating Reservations (Name field) | The name field cant be shorter than 3 characters, cant have special characters and displays the corresponding error message | Pass |
+| Edit Own Reservation | Own reservation details updated successfully | Pass |
+| Edit someoneelses Reservation by typing in the reservation id manually into the address bar | Custom 403 template loads | Pass |
+| Delete Own Reservation | Own reservation deleted successfully | Pass |
+
+### Website General Features Testing
+
+| TEST                                             | OUTCOME                                                    | PASS/FAIL |
+|--------------------------------------------------|------------------------------------------------------------|-----------|
+| All Buttons Functionality                        | Buttons perform their intended actions                      | Pass      |
+| External Links Behavior                          | External links open in new window/tab                       | Pass      |
+| Navigation Menu                                 | Navigation menu items lead to correct pages                 | Pass      |
+| Responsive Design                               | Website layout adjusts appropriately across devices          | Pass      |
+| Error Handling                                  | Proper error messages displayed and handled gracefully      | Pass      |
+| Image Loading                                   | Images load correctly and promptly                           | Pass      |
+
+## **Lighthouse Testing**
+
+After mostly finishing website i ran lighthouse tests for all main pages for mobile and desktop. 
+After seeing that blue buttons lowered accesibility ratings, I have changed the defualt bootstrap btn-primary buttons to btn-warnings. 
+
+![Lighthouse button issue](documentation\img\lighthouse\button-contrast.png)
+
+Lighthouse also marked my headings in the footer for not following order but after carefully checking decided to ignore this accessibilty issue. 
+
+![Lighthouse heading issue](documentation\img\lighthouse\heading-order.png)
+
+The cloudinary images were rasing warnings in the console for mixed content and lighthouse ofcourse marked this as a problem. The problem was caused by images from cloudinary being loaded over http instead of https. I couldnt figure out the source of the problem by internet searches and after checking that the menu item urls were stored without the https tag infront of the url in the databse. The images were being called with the http tag infront when i call them with item.url. To fix this i have written an if statement within the html that slices that http infront and adds https. 
+
+![Lighthouse mixed content issue](documentation\img\lighthouse\mixed-content-error.png)
+
+Lighthouse scores for each main page:
+
+![Lighthouse score home](documentation\img\lighthouse\home-desktop.png)
+*Lighthouse score home (desktop)*
+
+![Lighthouse score home](documentation\img\lighthouse\home-mobile.png)
+*Lighthouse score home (mobile)*
+
+![Lighthouse score Login](documentation\img\lighthouse\login-desktop.png)
+*Lighthouse score login (desktop)*
+
+![Lighthouse score login](documentation\img\lighthouse\login-mobile.png)
+*Lighthouse score login (mobile)*
+
+![Lighthouse score reservation](documentation\img\lighthouse\reservations-desktop.png)
+*Lighthouse score reservation (desktop)*
+
+![Lighthouse score reservation](documentation\img\lighthouse\reservations-mobile.png)
+*Lighthouse score reservation (mobile)*
+
+![Lighthouse score menu](documentation\img\lighthouse\menu-desktop.png)
+*Lighthouse score menu (desktop)*
+
+![Lighthouse score menu](documentation\img\lighthouse\menu-mobile.png)
+*Lighthouse score menu (mobile)*
+
+![Lighthouse score register](documentation\img\lighthouse\register-desktop.png)
+*Lighthouse score register (desktop)*
+
+![Lighthouse score register](documentation\img\lighthouse\register-mobile.png)
+*Lighthouse score register (mobile)*
+
+
+Menu page lower scores were mainly caused by cloudinary  images, which are not under my control and cannot be optimized further. The load times were giving mixed results for these images and these were also causing best practices errors even though i fixed the mixed content issue. 
+![Lighthouse score menu problem](documentation\img\lighthouse\menu-problems.png)
+*Lighthouse score menu problems*
 
 ## **Validation**
 
 ### **HTML Validation**
-* 
+
+I used the [HTML W3C Validator](https://validator.w3.org/) to validate all of my HTML files. I validated each page of the application by using the check by address option in the validator and pasting all my deployed sites urls.
+
+No errors were found for all my pages
+
+![Html validator Results](documentation\img\validations\html.png)
 
 ### **CSS Validation**
-* 
 
+I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS code. My custom CSS code was validated without errors.
 ### **JavaScript Validation**
-* 
+
 
 ### **Python Validation**
 * 
