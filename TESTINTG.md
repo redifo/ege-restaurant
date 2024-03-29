@@ -6,11 +6,8 @@
 
 * [**Testing**](#testing)
   * [**Table of Contents**](#table-of-contents)
+  * [**User-based restrictions**](#user-based-restrictions)
   * [**Manual Testing**](#manual-testing)
-  * [**User Story Testing**](#user-story-testing)
-    * [**Role-based restrictions**](#role-based-restrictions)
-    * [**CSV Upload**](#csv-upload)
-  * [**Accessibility Testing**](#accessibility-testing)
   * [**Lighthouse Testing**](#lighthouse-testing)
   * [**Validation**](#validation)
     * [**HTML Validation**](#html-validation)
@@ -117,7 +114,6 @@ Lighthouse scores for each main page:
 ![Lighthouse score register](documentation\img\lighthouse\register-mobile.png)
 *Lighthouse score register (mobile)*
 
-
 Menu page lower scores were mainly caused by cloudinary  images, which are not under my control and cannot be optimized further. The load times were giving mixed results for these images and these were also causing best practices errors even though i fixed the mixed content issue. 
 ![Lighthouse score menu problem](documentation\img\lighthouse\menu-problems.png)
 *Lighthouse score menu problems*
@@ -135,10 +131,22 @@ No errors were found for all my pages
 ### **CSS Validation**
 
 I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS code. My custom CSS code was validated without errors.
+
 ### **JavaScript Validation**
 
+[JSHint](https://jshint.com/) was utilized to evaluate the JavaScript code in my project. In order to address warnings related to ES6 variables, I included `/* jshint esversion: 6 */` as a comment at the beginning of JSHint. Additionally, to avoid warnings stemming from the usage of jQuery, `/*globals $:false */` was incorporated.
+
+My project comprises two JavaScript files: `main.js` and `menu.js`. 
+
+The `main.js` file contains JavaScript code for go back button function and automatic year retrival for footer. Upon validation using JSHint, only one warning appeared that says one unsued variable.
+
+![JS validation main.js](documentation\img\validations\js.png)\
+*JS validation result for main.js*
+
+The `menu.js` file encompasses JavaScript code specific to the menu filter functionality. Following evaluation with JSHint, no errors or warnings were identified in the `menu.js`
 
 ### **Python Validation**
+
 * 
 
 

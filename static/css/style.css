@@ -136,7 +136,7 @@ p.text-muted { /*copyright text*/
     color: black;
     border-radius: 15px;
     overflow: hidden;
-    background: linear-gradient(to bottom, #fcf6e494 25pxrgb(252, 246, 228)8c 25px);
+    background: linear-gradient(to bottom, #fcf6e494 25px, rgb(252, 246, 228) 8px 25px);
 }
 
 .food-section .box .img-box {
@@ -180,7 +180,7 @@ p.text-muted { /*copyright text*/
 .reservation-box {
     margin-top: 75px;
     margin-left: 20px;
-    margin-bottom: 30 px;
+    margin-bottom: 30px;
     margin-right: 20px;
     padding: 20px;
     background-color: #fcf6e4e7;
